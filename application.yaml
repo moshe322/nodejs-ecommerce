@@ -12,7 +12,7 @@ spec:
     targetRevision: 'HEAD'
   
   destination:
-    namespace: myapp
+    namespace: default
     server: 'https://12D82A849D1AB20CFBDDF64FBFC311AD.gr7.us-east-1.eks.amazonaws.com'
   
   syncPolicy:
