@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+spec:
+  destination:
+    server: 'https://12D82A849D1AB20CFBDDF64FBFC311AD.gr7.us-east-1.eks.amazonaws.com'
+    namespace: default
+  source:
+    repoURL: 'https://github.com/moshe322/nodejs-ecommerce.git'
+    path: '.'
+    targetRevision: 'master'
+  project: default
