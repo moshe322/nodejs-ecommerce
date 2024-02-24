@@ -5,6 +5,7 @@ metadata:
   labels:
     app: ecommerce
   name: ecommerce
+  namespace: argocd
 spec:
   replicas: 1
   selector:
