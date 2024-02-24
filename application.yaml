@@ -4,10 +4,10 @@ metadata:
   name: my-app
 spec:
   destination:
-    server: 'https://12D82A849D1AB20CFBDDF64FBFC311AD.gr7.us-east-1.eks.amazonaws.com'
+    server: 'https://kubernetes.default.svc'  # This is the internal Kubernetes service DNS
     namespace: default
   source:
     repoURL: 'https://github.com/moshe322/nodejs-ecommerce.git'
     path: '.'
-    targetRevision: 'master'
+    targetRevision: 'main'  # or 'master', depending on your branch
   project: default
