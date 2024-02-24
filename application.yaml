@@ -2,12 +2,24 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: my-app
+  namespace: argocd
 spec:
-  destination:
-    server: 'https://kubernetes.default.svc'  # This is the internal Kubernetes service DNS
-    namespace: default
+  project: default
+  
   source:
     repoURL: 'https://github.com/moshe322/nodejs-ecommerce.git'
     path: '.'
-    targetRevision: 'main'  # or 'master', depending on your branch
-  project: default
+    targetRevision: 'HEAD'
+  
+  destination:
+    namespace: myapp
+    server: 'https://12D82A849D1AB20CFBDDF64FBFC311AD.gr7.us-east-1.eks.amazonaws.com'
+  
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace: true
+    
+    automated:
+      selfHeal: true
+      prune: true
+  
